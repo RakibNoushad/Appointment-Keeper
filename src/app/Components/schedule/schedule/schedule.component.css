@@ -1,0 +1,23 @@
+.content {
+  padding-bottom: 50px;
+}
+
+.flex-container {
+  margin-left: 28rem;
+  margin-top: 70px;
+}
+
+.list {
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+.mat-list-item-disabled {
+  background-color: rgb(255, 0, 0);
+}
+
+.mat-list-single-selected-option,
+.mat-list-single-selected-option:hover,
+.mat-list-single-selected-option:focus {
+  background: rgba(0, 255, 0, 0.849);
+}

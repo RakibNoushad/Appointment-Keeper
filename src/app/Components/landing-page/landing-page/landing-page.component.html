@@ -1,0 +1,22 @@
+<div class="flex-container">
+  <p>Choose Specialist:</p>
+  <mat-form-field appearance="fill">
+    <mat-select required [formControl]="doctor">
+      <mat-option value="{{ i }}" *ngFor="let doctor of doctors; let i = index">
+        <mat-icon>person_outline</mat-icon>{{ doctor.name }}
+      </mat-option>
+    </mat-select>
+    <mat-label>Choose Specialist</mat-label>
+  </mat-form-field>
+  <br />
+
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="doctor.invalid"
+    type="submit"
+    (click)="schedule()"
+  >
+    Next
+  </button>
+</div>

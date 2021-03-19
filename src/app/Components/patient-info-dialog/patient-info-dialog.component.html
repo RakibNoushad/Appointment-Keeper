@@ -1,0 +1,74 @@
+<div
+  class="example-container"
+  [formGroup]="patientForm"
+  (ngSubmit)="addNewAppointment()"
+>
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input
+      required
+      matInput
+      placeholder="John"
+      [formControl]="fNameFormControl"
+    />
+
+    <mat-error *ngIf="fNameFormControl.hasError('required')">
+      First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="Doe" formControlName="lastName" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <span matPrefix>+88 &nbsp;</span>
+    <input
+      required
+      type="tel"
+      matInput
+      [formControl]="phoneFormControl"
+      placeholder="555-555-1234"
+    />
+    <mat-icon matSuffix>phone</mat-icon>
+
+    <mat-error *ngIf="phoneFormControl.hasError('required')">
+      Phone is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="phoneFormControl.hasError('pattern')">
+      Phone must not contain any <strong>alphabet</strong>
+    </mat-error>
+    <mat-error
+      *ngIf="
+        !phoneFormControl.hasError('pattern') &&
+        !phoneFormControl.hasError('required') &&
+        !phoneFormControl.hasError('minLength') &&
+        !phoneFormControl.hasError('maxLength')
+      "
+    >
+      Phone must contain <strong>11 digits</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Visit Reason</mat-label>
+    <input matInput placeholder="Checkup" formControlName="visitReason" />
+  </mat-form-field>
+
+  <div align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addNewAppointment()"
+      mat-dialog-close
+      [disabled]="patientForm.invalid"
+      routerLink=""
+    >
+      Save
+    </button>
+  </div>
+</div>

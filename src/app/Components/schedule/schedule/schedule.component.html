@@ -1,0 +1,37 @@
+<div class="content">
+  <div class="flex-container">
+    <!-- <p>{{ doctor.name }}</p> -->
+    <p>Choose a date:</p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input
+        [formControl]="date"
+        matInput
+        [matDatepickerFilter]="myFilter"
+        [matDatepicker]="picker"
+        [min]="minDate"
+        (dateChange)="getSlots(date)"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="list" *ngIf="date.valid">
+    <!-- //todo generate another component for the list -->
+    <mat-selection-list #slots [multiple]="false">
+      <mat-list-option
+        *ngFor="let slot of totalSlots"
+        [value]="slot"
+        [disabled]="isSlotBooked(slot)"
+        (click)="openDialog(slot)"
+      >
+        {{ slot }}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+
+  <!-- [disabled]="doctor.invalid"
+type="submit"
+(click)="schedule()" -->
+</div>
