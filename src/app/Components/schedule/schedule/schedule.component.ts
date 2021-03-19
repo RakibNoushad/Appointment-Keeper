@@ -73,7 +73,6 @@ export class ScheduleComponent implements OnInit {
     });
   }
 
-  //TODO add custom date formatting
   myFilter = (d: Date | null): boolean => {
     const day = (d || new Date()).getDay();
     var temp = this.availDay.find((x) => x == day);

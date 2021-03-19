@@ -21,9 +21,7 @@ export class DoctorService {
     'https://my-json-server.typicode.com/RakibNoushad/server/appointments';
   slotUrl = '../assets/slots.json';
   constructor(private http: HttpClient) {
-    this.getJSON().subscribe((data) => {
-      console.log(data);
-    });
+    this.getJSON().subscribe((data) => {});
   }
 
   public getJSON(): Observable<any> {

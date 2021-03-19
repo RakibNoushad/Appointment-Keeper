@@ -48,7 +48,6 @@ export class PatientInfoDialog {
   }
 
   async addNewAppointment() {
-    console.log('okay');
     const id = 1;
     const doctor = this.data.doctor;
     const date = this.data.date;
@@ -68,13 +67,11 @@ export class PatientInfoDialog {
     );
 
     try {
-      await this.doctorService.addAppointment(appointment).subscribe((user) => {
-        console.log(user);
-      });
+      await this.doctorService
+        .addAppointment(appointment)
+        .subscribe((user) => {});
       this.openSnackBar('Appointment created successfully', 'Close');
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   openSnackBar(message: string, action: string) {

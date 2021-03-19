@@ -3,7 +3,7 @@
   <mat-form-field appearance="fill">
     <mat-select required [formControl]="doctor">
       <mat-option value="{{ i }}" *ngFor="let doctor of doctors; let i = index">
-        <mat-icon>person_outline</mat-icon>{{ doctor.name }}
+        <img src="{{ img }}" />{{ doctor.name }}
       </mat-option>
     </mat-select>
     <mat-label>Choose Specialist</mat-label>

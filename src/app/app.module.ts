@@ -16,7 +16,6 @@ import { FormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { VisitingSlotComponent } from './Components/visiting-slot/visiting-slot.component';
 import { PatientInfoDialog } from './Components/patient-info-dialog/patient-info-dialog.component';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { PatientInfoDialog } from './Components/patient-info-dialog/patient-info
     NavComponent,
     LandingPageComponent,
     ScheduleComponent,
-    VisitingSlotComponent,
     PatientInfoDialog,
   ],
   imports: [

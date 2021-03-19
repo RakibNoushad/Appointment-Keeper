@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit {
   doctor = new FormControl('', [Validators.required]);
+  img = '../../../../assets/Image/doctorp.png';
 
   public doctors: {
     name: string;

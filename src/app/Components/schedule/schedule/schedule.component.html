@@ -18,7 +18,6 @@
   </div>
 
   <div class="list" *ngIf="date.valid">
-    <!-- //todo generate another component for the list -->
     <mat-selection-list #slots [multiple]="false">
       <mat-list-option
         *ngFor="let slot of totalSlots"
